@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import our custom solar desert theme */
+@import url('../styles/solar-desert-theme.css');
+
+:root {
+  /* Map our solar desert theme variables to Tailwind CSS variables */
+  --background: 40 33% 98%;
+  --foreground: 30 15% 25%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 30 15% 25%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 15% 25%;
+  
+  --primary: 35 90% 55%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 210 100% 56%;
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 30 10% 80%;
+  --muted-foreground: 30 10% 40%;
+  
+  --accent: 35 30% 58%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 30 15% 85%;
+  --input: 30 15% 85%;
+  --ring: 35 90% 55%;
+  
+  --radius: 0.5rem;
+  
+  /* Chart colors */
+  --chart-1: 35 90% 55%;
+  --chart-2: 210 100% 56%;
+  --chart-3: 140 40% 55%;
+  --chart-4: 20 80% 60%;
+  --chart-5: 270 60% 60%;
+  
+  /* Sidebar colors */
+  --sidebar-background: 30 15% 15%;
+  --sidebar-foreground: 30 10% 95%;
+  --sidebar-primary: 35 90% 55%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 210 100% 56%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 30 15% 25%;
+  --sidebar-ring: 35 90% 55%;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-primary);
+  background-color: var(--neutral-light);
+  color: var(--neutral-dark);
+}
+
+/* Custom component styles */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/henderson-desert.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem;
+  color: white;
+  text-align: center;
+}
+
+.benefits-section {
+  background-color: var(--neutral-light);
+  padding: 4rem 2rem;
+}
+
+.cta-section {
+  background-color: var(--primary-desert);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.footer {
+  background-color: var(--neutral-darkest);
+  color: white;
+  padding: 3rem 2rem 2rem;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--primary-sun), var(--secondary-deep-sky));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animation classes */
+.sun-animation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.sun-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-sun);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(249, 168, 38, 0.8);
+  animation: sunPulse 5s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 40px rgba(249, 168, 38, 0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 60px rgba(249, 168, 38, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 40px rgba(249, 168, 38, 0.8);
+  }
+}

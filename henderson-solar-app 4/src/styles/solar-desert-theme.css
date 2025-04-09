@@ -1,0 +1,767 @@
+/* 
+ * Solar Desert Theme - Style Sheet
+ * Created for Henderson, Nevada Solar Information Web Application
+ */
+
+:root {
+  /* Primary Colors - Desert Sun Palette */
+  --primary-sun: #f9a826;      /* Bright sun yellow/orange */
+  --primary-sand: #e0c088;     /* Light sand color */
+  --primary-desert: #c19a6b;   /* Desert tan */
+  
+  /* Secondary Colors - Solar & Sky Palette */
+  --secondary-sky: #87ceeb;    /* Sky blue */
+  --secondary-deep-sky: #1e90ff; /* Deep sky blue */
+  --secondary-solar-panel: #2c3e50; /* Dark blue-gray like solar panels */
+  
+  /* Neutral Colors */
+  --neutral-light: #f8f5f0;    /* Light sand/paper color */
+  --neutral-medium: #d3ccc1;   /* Medium sand color */
+  --neutral-dark: #5d5346;     /* Dark earth tone */
+  --neutral-darkest: #2d2a24;  /* Almost black earth */
+  
+  /* Accent Colors */
+  --accent-cactus: #5a7247;    /* Cactus green */
+  --accent-terracotta: #c75146; /* Terracotta red */
+  --accent-sunset: #ff7e5f;    /* Sunset orange/red */
+  
+  /* Functional Colors */
+  --success: #4caf50;          /* Green for success messages */
+  --warning: #ff9800;          /* Orange for warnings */
+  --error: #f44336;            /* Red for errors */
+  --info: var(--secondary-sky); /* Blue for information */
+  
+  /* Typography */
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Open Sans', sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* Base Styles */
+html {
+  font-size: var(--font-size-base);
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: var(--line-height-base);
+  color: var(--neutral-dark);
+  background-color: var(--neutral-light);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: var(--neutral-darkest);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-desert);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--neutral-darkest);
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-secondary);
+}
+
+a {
+  color: var(--secondary-deep-sky);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-sun);
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, var(--primary-desert), var(--primary-sun));
+  color: white;
+  padding: var(--spacing-lg) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.nav-link {
+  color: white;
+  font-weight: 600;
+  transition: opacity var(--transition-fast);
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/henderson-desert.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: var(--spacing-xxl) 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xl);
+  font-weight: 400;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-sun);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: #e89b1c;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-deep-sky);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1a7fd1;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-sun);
+  color: var(--primary-sun);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-sun);
+  color: white;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  padding: var(--spacing-md);
+  background-color: var(--primary-desert);
+  color: white;
+}
+
+.card-body {
+  padding: var(--spacing-lg);
+}
+
+.card-footer {
+  padding: var(--spacing-md);
+  background-color: var(--neutral-light);
+  border-top: 1px solid var(--neutral-medium);
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+  color: var(--neutral-darkest);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--neutral-darkest);
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid var(--neutral-medium);
+  border-radius: var(--border-radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--primary-sun);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(249, 168, 38, 0.25);
+}
+
+.form-control::placeholder {
+  color: var(--neutral-medium);
+  opacity: 1;
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--neutral-darkest);
+  background-color: white;
+  border: 1px solid var(--neutral-medium);
+  border-radius: var(--border-radius-md);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235d5346' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
+.form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0.125rem;
+}
+
+.form-check-input {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  margin-left: -1.5rem;
+  background-color: white;
+  border: 1px solid var(--neutral-medium);
+  border-radius: var(--border-radius-sm);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-sun);
+  border-color: var(--primary-sun);
+}
+
+/* Alert Messages */
+.alert {
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+/* Features Section */
+.features {
+  padding: var(--spacing-xxl) 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.feature-item {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-sun);
+  margin-bottom: var(--spacing-md);
+}
+
+.feature-title {
+  margin-bottom: var(--spacing-sm);
+  color: var(--neutral-darkest);
+}
+
+/* Benefits Section */
+.benefits {
+  background-color: var(--neutral-light);
+  padding: var(--spacing-xxl) 0;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+}
+
+.benefit-icon {
+  color: var(--primary-sun);
+  font-size: 1.5rem;
+  margin-right: var(--spacing-md);
+}
+
+/* CTA Section */
+.cta {
+  background-color: var(--primary-desert);
+  color: white;
+  padding: var(--spacing-xxl) 0;
+  text-align: center;
+}
+
+.cta-title {
+  color: white;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--neutral-darkest);
+  color: white;
+  padding: var(--spacing-xl) 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.footer-heading {
+  color: var(--primary-sand);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-link a {
+  color: var(--neutral-medium);
+  transition: color var(--transition-fast);
+}
+
+.footer-link a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: var(--neutral-medium);
+  font-size: 0.875rem;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav {
+    margin-top: var(--spacing-md);
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Solar Panel Animation */
+.solar-panel {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: var(--secondary-solar-panel);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.solar-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+  background-size: 10px 10px;
+  animation: solarGlow 3s ease-in-out infinite;
+}
+
+@keyframes solarGlow {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Sun Animation */
+.sun-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-sun);
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(249, 168, 38, 0.8);
+  animation: sunPulse 5s ease-in-out infinite;
+}
+
+.sun-icon::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-sun);
+  opacity: 0;
+  animation: sunRays 3s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 40px rgba(249, 168, 38, 0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 60px rgba(249, 168, 38, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 40px rgba(249, 168, 38, 0.8);
+  }
+}
+
+@keyframes sunRays {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Desert Background Pattern */
+.desert-pattern {
+  background-color: var(--primary-sand);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264.888-.14 1.005-.174 1.837-.83 2.12-1.7.418-.9 1.334-1.8 2.01-2.1.19-.2.33-.85.37-1.6.08-.65.083-1.2-.36-1.65-.83-.9-1.71-.83-2.75-.77-.82.07-1.21.14-1.98.23-.27.03-.56.05-.75.08-.13.02-.27.04-.42.08h.05c-.4.11-.74.2-.88.25-.18.06-.33.12-.46.19l-.05.01c-.17.08-.28.14-.38.2-.11.07-.2.13-.3.2l-.02.02c-.1.08-.17.13-.25.2l-.04.04c-.07.06-.12.11-.2.17l-.06.06c-.02.02-.1.1-.1.1v.01c-.02.03-.06.05-.08.08l-.01.01c-.06.06-.1.12-.17.2l-.07.08c-.05.06-.1.14-.15.22l-.02.03c-.05.08-.1.16-.14.26l-.01.03c-.04.07-.06.13-.09.2l-.03.07c-.03.06-.05.13-.08.2l-.01.03c-.05.13-.08.26-.13.4l-.01.01c-.03.12-.07.25-.1.36l-.01.06c-.02.1-.05.2-.07.3l-.01.03c-.02.08-.04.16-.05.24l-.01.06c-.02.09-.03.18-.05.27l-.01.05c-.02.08-.03.17-.04.26 0 .02-.01.03-.01.05-.01.09-.02.19-.03.28v.04c-.01.1-.01.2-.02.3v.03c0 .1-.01.19-.01.29V18c0 .09.01.19.01.28v.03c0 .1.01.2.02.3v.04c.01.09.02.18.03.27v.05c.01.09.03.18.04.27l.01.05c.01.08.03.16.05.24l.01.06c.02.09.04.19.07.29l.01.06c.03.11.06.22.1.34l.01.04c.03.1.07.19.1.28l.02.06c.03.08.06.16.09.23l.02.06c.03.07.06.13.09.2l.03.07c.03.06.06.12.09.18l.04.08c.04.07.08.13.12.2l.05.08c.05.08.1.15.16.22l.06.07c.05.07.11.13.17.18l.06.06c.06.06.12.12.18.16l.07.06c.06.06.13.1.2.14l.1.07c.07.04.13.09.2.12l.11.06c.07.03.14.07.22.1l.1.04c.08.03.16.06.24.08l.1.03c.09.02.18.05.27.07l.09.02c.1.02.2.03.3.04l.1.01c.11.01.22.02.34.02h.12c.12 0 .23-.01.35-.02l.07-.01c.1-.01.2-.02.3-.04l.06-.01c.1-.02.19-.04.28-.07l.05-.02c.09-.03.17-.06.25-.09l.03-.01c.08-.03.16-.07.24-.11l.02-.01c.08-.04.15-.09.22-.14l.02-.02c.07-.05.14-.11.2-.17l.02-.02c.07-.06.13-.12.18-.19l.01-.02c.05-.06.1-.14.14-.21v-.01c.04-.08.09-.16.12-.24l.01-.02c.04-.08.07-.17.1-.25l.01-.04c.03-.08.05-.17.07-.26l.01-.05c.02-.08.03-.17.04-.26l.01-.06c.01-.09.02-.19.02-.29v-.08c0-.09-.01-.19-.02-.28v-.01c-.01-.1-.02-.19-.04-.29l-.01-.05c-.02-.09-.03-.18-.05-.27l-.02-.08c-.02-.08-.05-.16-.07-.24l-.02-.06c-.03-.09-.06-.17-.09-.25l-.02-.06c-.04-.08-.07-.16-.11-.23l-.02-.04c-.05-.09-.09-.17-.14-.24l-.03-.05c-.05-.08-.1-.15-.16-.22l-.04-.05c-.06-.07-.12-.13-.19-.19l-.05-.05c-.07-.06-.14-.11-.22-.15l-.04-.03c-.09-.06-.17-.1-.26-.14l-.06-.03c-.1-.04-.2-.08-.3-.11l-.04-.01c-.12-.04-.23-.07-.35-.09l-.09-.02c-.16-.03-.31-.04-.48-.04h-.07c-.17 0-.34.01-.5.04l-.08.02c-.12.03-.23.05-.35.09l-.07.03c-.1.04-.19.08-.29.12l-.05.02c-.11.05-.22.11-.32.18l-.02.01c-.08.05-.16.11-.24.18l-.02.02c-.08.06-.15.13-.22.21l-.01.01c-.07.08-.13.16-.19.24l-.01.02c-.06.1-.11.2-.15.3l-.01.02c-.04.1-.07.21-.1.32l-.01.04c-.03.11-.05.22-.06.34-.01.08-.01.16-.01.24v.02c0 .08 0 .16.01.23v.01c.01.13.03.25.06.37v.01c.02.1.05.2.09.3l.01.02c.03.09.08.18.13.27l.01.01c.05.08.1.16.16.24l.01.01c.06.07.13.14.2.2l.01.01c.08.06.16.11.24.16h.01c.1.05.2.09.3.12h.01c.11.03.23.05.34.05h.01c.12 0 .24-.02.36-.05h.01c.1-.03.2-.07.3-.12h.01c.08-.05.16-.1.24-.16l.01-.01c.08-.06.15-.13.21-.22l.01-.01c.05-.08.1-.16.15-.25l.01-.02c.04-.09.08-.18.11-.28l.01-.03c.03-.1.05-.2.06-.31v-.01c.01-.08.01-.17.01-.25v-.02c0-.08 0-.16-.01-.24-.01-.13-.04-.26-.08-.38l-.01-.02c-.04-.13-.09-.25-.16-.36v-.01c-.07-.13-.17-.24-.28-.33l-.01-.01c-.12-.1-.26-.18-.41-.23l-.01-.01c-.2-.07-.43-.09-.65-.06l-.07.01c-.16.02-.32.08-.46.16l-.01.01c-.09.06-.18.14-.24.23l-.01.01c-.08.1-.14.22-.17.34v.01c-.03.1-.04.21-.04.31 0 .08.01.16.03.24l.03.07c.02.07.06.13.1.18l.06.06c.06.06.12.09.21.09l.19-.01c.03 0 .05-.01.08-.01.9-.13 1.85-.25 2.78-.33.14-.01.28-.03.43-.05h.01c.16-.02.33-.03.49-.05h.01c.2-.02.41-.03.61-.05h.01c.22-.01.44-.02.66-.03h.01c.4-.01.81-.02 1.22-.02h1.27c.42 0 .83.01 1.24.03h.01c.22.01.44.02.66.04h.01c.2.01.4.03.6.04h.01c.17.02.34.03.5.05h.01c.15.02.3.03.44.05.93.09 1.88.21 2.78.34.04.01.07.01.11.02l.17.01c.09 0 .15-.03.21-.09l.06-.06c.04-.05.07-.11.1-.18l.02-.07c.02-.08.03-.16.03-.24 0-.11-.01-.21-.04-.31v-.01c-.04-.13-.09-.24-.17-.34l-.01-.01c-.07-.1-.16-.17-.25-.23l-.01-.01c-.14-.08-.3-.14-.46-.16l-.06-.01c-.23-.03-.46-.01-.66.06l-.01.01c-.16.05-.3.13-.41.23l-.01.01c-.12.09-.21.2-.28.33v.01c-.07.12-.12.24-.16.37l-.01.02c-.04.12-.06.25-.07.38v.01c-.01.08-.01.16-.01.24v.02c0 .08 0 .17.01.25v.01c.01.11.03.22.06.31l.01.03c.03.1.07.19.11.28l.01.02c.05.09.1.17.15.25l.01.01c.06.08.13.15.21.22l.01.01c.08.06.16.11.24.16h.01c.1.05.2.09.3.12h.01c.12.03.24.05.36.05h.01c.12 0 .23-.02.34-.05h.01c.1-.03.2-.07.3-.12h.01c.08-.05.16-.1.24-.16l.01-.01c.07-.06.14-.13.2-.2l.01-.01c.06-.08.11-.16.16-.24l.01-.01c.05-.09.09-.18.13-.27l.01-.02c.04-.1.07-.19.09-.3v-.01c.03-.12.05-.24.06-.37v-.01c.01-.07.01-.15.01-.23v-.02c0-.08-.01-.16-.01-.24-.01-.12-.03-.23-.06-.34l-.01-.04c-.03-.11-.06-.22-.1-.32l-.01-.02c-.04-.1-.09-.2-.15-.3l-.01-.02c-.06-.08-.12-.17-.19-.24l-.01-.01c-.07-.08-.14-.15-.22-.21l-.02-.02c-.08-.07-.17-.13-.24-.18l-.02-.01c-.1-.07-.21-.13-.32-.18l-.05-.02c-.1-.04-.19-.08-.29-.12l-.07-.03c-.12-.04-.23-.06-.35-.09l-.08-.02c-.16-.03-.33-.04-.5-.04h-.07c-.17 0-.32.01-.48.04l-.09.02c-.12.02-.23.05-.35.09l-.04.01c-.1.03-.2.07-.3.11l-.06.03c-.09.04-.17.08-.26.14l-.04.03c-.08.04-.15.09-.22.15l-.05.05c-.07.06-.13.12-.19.19l-.04.05c-.06.07-.11.14-.16.22l-.03.05c-.05.08-.09.16-.14.24l-.02.04c-.04.08-.07.16-.11.23l-.02.06c-.03.08-.06.16-.09.25l-.02.06c-.02.08-.05.16-.07.24l-.02.08c-.02.09-.03.18-.05.27l-.01.05c-.02.1-.03.19-.04.29v.01c-.01.09-.02.19-.02.28v.08c0 .1.01.2.02.29l.01.06c.01.09.02.18.04.26l.01.05c.02.09.04.18.07.26l.01.04c.03.09.06.17.1.25l.01.02c.04.08.08.16.12.24v.01c.05.07.09.15.14.21l.01.02c.05.07.11.13.18.19l.02.02c.06.06.13.12.2.17l.02.02c.07.05.14.1.22.14l.02.01c.08.04.16.08.24.11l.03.01c.08.03.16.06.25.09l.05.02c.09.03.18.05.28.07l.06.01c.1.02.2.03.3.04l.07.01c.12.01.23.02.35.02h.12c.12 0 .23-.01.34-.02l.1-.01c.1-.01.2-.02.3-.04l.09-.02c.09-.02.18-.05.27-.07l.1-.03c.08-.02.16-.05.24-.08l.1-.04c.08-.03.15-.07.22-.1l.11-.06c.07-.03.13-.08.2-.12l.1-.07c.07-.04.14-.08.2-.14l.07-.06c.06-.04.12-.1.18-.16l.06-.06c.06-.05.12-.11.17-.18l.06-.07c.06-.07.11-.14.16-.22l.05-.08c.04-.07.08-.13.12-.2l.04-.08c.03-.06.06-.12.09-.18l.04-.08c.03-.07.06-.13.09-.2l.03-.07c.03-.07.06-.13.09-.2l.02-.06c.03-.09.07-.19.1-.28l.02-.06c.04-.11.07-.22.1-.34l.01-.06c.03-.1.05-.2.07-.29l.01-.06c.02-.08.04-.16.05-.24l.01-.06c.01-.09.03-.18.04-.27l.01-.05c.01-.09.02-.18.03-.27v-.05c.01-.1.01-.2.02-.3v-.03c0-.1.01-.19.01-.29V18c0-.09-.01-.19-.01-.28v-.03c-.01-.1-.01-.2-.02-.3v-.04c-.01-.09-.02-.19-.03-.28 0-.02-.01-.03-.01-.05-.01-.09-.02-.18-.04-.26l-.01-.05c-.02-.09-.03-.18-.05-.27l-.01-.06c-.01-.08-.03-.16-.05-.24l-.01-.03c-.02-.1-.05-.2-.07-.3l-.01-.06c-.03-.11-.07-.24-.1-.36l-.01-.01c-.05-.14-.08-.27-.13-.4l-.01-.03c-.03-.07-.05-.14-.08-.2l-.03-.07c-.03-.07-.05-.13-.09-.2l-.01-.03c-.04-.1-.09-.18-.14-.26l-.02-.03c-.05-.08-.1-.16-.15-.22l-.07-.08c-.07-.08-.11-.14-.17-.2l-.01-.01c-.02-.03-.06-.05-.08-.08l-.01-.01-.1-.1-.06-.06c-.08-.07-.13-.12-.2-.17l-.04-.04c-.08-.07-.15-.12-.25-.2l-.02-.02c-.1-.07-.19-.13-.3-.2l-.05-.01c-.13-.07-.28-.13-.46-.19-.14-.05-.48-.14-.88-.25h-.05c-.15-.04-.29-.06-.42-.08-.19-.03-.48-.05-.75-.08-.77-.09-1.16-.16-1.98-.23-1.04-.06-1.92-.13-2.75.77-.44.45-.44 1-.36 1.65.04.75.18 1.4.37 1.6.68.3 1.59 1.2 2.01 2.1.28.87 1.11 1.53 2.12 1.7.17.12.53.25.89.14z' fill='%23c19a6b' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mb-4 {
+  margin-bottom: var(--spacing-xl);
+}
+
+.mb-5 {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.mt-1 {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-2 {
+  margin-top: var(--spacing-md);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-lg);
+}
+
+.mt-4 {
+  margin-top: var(--spacing-xl);
+}
+
+.mt-5 {
+  margin-top: var(--spacing-xxl);
+}
+
+.p-1 {
+  padding: var(--spacing-sm);
+}
+
+.p-2 {
+  padding: var(--spacing-md);
+}
+
+.p-3 {
+  padding: var(--spacing-lg);
+}
+
+.p-4 {
+  padding: var(--spacing-xl);
+}
+
+.p-5 {
+  padding: var(--spacing-xxl);
+}
+
+.bg-primary {
+  background-color: var(--primary-sun);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-deep-sky);
+}
+
+.bg-desert {
+  background-color: var(--primary-desert);
+}
+
+.bg-sand {
+  background-color: var(--primary-sand);
+}
+
+.bg-light {
+  background-color: var(--neutral-light);
+}
+
+.bg-dark {
+  background-color: var(--neutral-darkest);
+}
+
+.text-white {
+  color: white;
+}
+
+.text-dark {
+  color: var(--neutral-darkest);
+}
+
+.text-primary {
+  color: var(--primary-sun);
+}
+
+.text-secondary {
+  color: var(--secondary-deep-sky);
+}
+
+.rounded {
+  border-radius: var(--border-radius-md);
+}
+
+.shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.gap-1 {
+  gap: var(--spacing-sm);
+}
+
+.gap-2 {
+  gap: var(--spacing-md);
+}
+
+.gap-3 {
+  gap: var(--spacing-lg);
+}
